@@ -157,7 +157,7 @@ export default function Gallery({ instId,user,owner }) {
             onClick={() => setFullscreenItem(null)}
         >
             <img
-            src={`http://localhost:8000${fullscreenItem.image}`}
+            src={`https://edusafari.onrender.com${fullscreenItem.image}`}
             alt={fullscreenItem.title}
             className="max-h-full max-w-full object-contain"
             />
