@@ -11,7 +11,7 @@ const Help = () => {
         e.preventDefault()
         const form = {title:title,content:content,email:email}
         try{
-            await axios.post("http://localhost:8000/api/help/",form);
+            await axios.post("https://edusafari.onrender.com/api/help/",form);
             setContent("");
             setEmail("");
             setTitle("");
