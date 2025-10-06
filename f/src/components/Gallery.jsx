@@ -115,7 +115,7 @@ export default function Gallery({ instId,user,owner }) {
             className="relative group bg-white dark:bg-gray-900 rounded-xl shadow overflow-hidden"
              onClick={() => setActiveItem(item.id === activeItem ? null : item.id)}
           >
-            <img src={`http://localhost:8000${item.image}`} alt={item.title} className="w-full h-40 object-cover" />
+            <img src={`https://edusafari.onrender.com${item.image}`} alt={item.title} className="w-full h-40 object-cover" />
             <div className="p-2">
               <p className="text-sm font-medium dark:text-gray-200">{item.title}</p>
             </div>
