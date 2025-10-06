@@ -53,8 +53,8 @@ export default function EduToolDetail() {
     }
   };
   
-
-  if (!tool) return <p className="text-center text-gray-500">Loading...</p>;
+console.log(tool)
+  if (!tool) return <p className="text-center text-gray-500 p-30">Loading...</p>;
 
   return (
     <div className="max-w-3xl mx-auto p-6">
