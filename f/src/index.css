@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+/* CSS-first dark mode for Tailwind v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+button{
+  cursor: pointer;
+}
+
+/* global.css */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+
