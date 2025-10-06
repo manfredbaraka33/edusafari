@@ -148,7 +148,7 @@ export default function EduTools() {
             onClick={() => handleCardClick(tool.id)}
           >
             <img
-              src={`http://localhost:8000${tool.logo}`}
+              src={`https://edusafari.onrender.com${tool.logo}`}
               alt={tool.name}
               className="w-20 h-20 mb-4 rounded-full"
             />
