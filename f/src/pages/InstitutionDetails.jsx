@@ -336,8 +336,7 @@ const handleDeleteComb = async (combId) => {
   if (isLoading) return <p className="p-6 text-gray-600 dark:text-gray-100">Loading institution details...</p>;
 
   return (
-    {/*<div className="bg-gradient-to-br from-indigo-50 to-white shadow-xl rounded-2xl p-8 max-w-4xl mx-auto dark:from-slate-800 dark:to-slate-600 my-2">*/}
-    <div className="bg-gradient-to-br from-indigo-50 to-white shadow-xl rounded-2xl w-full max-w-4xl mx-auto p-4 sm:p-6 md:p-8 overflow-x-hidden dark:from-slate-800 dark:to-slate-600 my-2">
+    <div className="bg-gradient-to-br from-indigo-50 to-white shadow-xl rounded-2xl p-8 w-full max-w-4xl mx-auto dark:from-slate-800 dark:to-slate-600 my-2">
 
       {/* Header */}
       <div className="flex flex-col items-center text-center mb-8">
