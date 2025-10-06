@@ -336,7 +336,8 @@ const handleDeleteComb = async (combId) => {
   if (isLoading) return <p className="p-6 text-gray-600 dark:text-gray-100">Loading institution details...</p>;
 
   return (
-    <div className="bg-gradient-to-br from-indigo-50 to-white shadow-xl rounded-2xl p-8 max-w-4xl mx-auto dark:from-slate-800 dark:to-slate-600 my-2">
+    <div className="bg-gradient-to-br from-indigo-50 to-white shadow-xl rounded-2xl p-8 w-full max-w-4xl mx-auto dark:from-slate-800 dark:to-slate-600 my-2">
+
       {/* Header */}
       <div className="flex flex-col items-center text-center mb-8">
         <div className="relative">
@@ -785,15 +786,15 @@ const handleDeleteComb = async (combId) => {
               <input type="text" name="name" value={editForm.name} onChange={handleEditChange} className="w-full border rounded p-2" required />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-2">
                 <div><label className="mx-2" htmlFor="Duration">Duration</label>
-                <input type="number" name="duration" value={editForm.duration} onChange={handleEditChange} className="border rounded p-2" required />
+                <input type="number" name="duration" value={editForm.duration} onChange={handleEditChange} className="border w-full rounded p-2" required />
                </div>
                 <div>
                   <label className="mx-2" htmlFor="">Fee</label>
-                <input type="number" name="fee" value={editForm.fee} onChange={handleEditChange} className="border rounded p-2" required />
+                <input type="number" name="fee" value={editForm.fee} onChange={handleEditChange} className="border rounded p-2 w-full" required />
                 </div>
                 </div>
               <div className="grid grid-cols-2 gap-3">
-                <select name="type" value={editForm.type} onChange={handleEditChange} className="border rounded p-2 dark:bg-gray-800" required>
+                <select name="type" value={editForm.type} onChange={handleEditChange} className="border w-full rounded p-2 dark:bg-gray-800" required>
                   <option value="">Select type</option>
                   <option value="certificate">Certificate</option>
                   <option value="diploma">Diploma</option>
@@ -801,7 +802,7 @@ const handleDeleteComb = async (combId) => {
                   <option value="master">Master</option>
                   <option value="phd">PhD</option>
                 </select>
-                <select name="delivery_mode" value={editForm.delivery_mode} onChange={handleEditChange} className="border rounded dark:bg-gray-800 p-2" required>
+                <select name="delivery_mode" value={editForm.delivery_mode} onChange={handleEditChange} className="border rounded w-full dark:bg-gray-800 p-2" required>
                   <option value="">Select mode</option>
                   <option value="on_campus">On Campus</option>
                   <option value="online">Online</option>

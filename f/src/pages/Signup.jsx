@@ -71,7 +71,7 @@ export default function Signup() {
         password: formData.password,
       };
       const response = await axios.post(
-        "http://localhost:8000/api/register/",
+        "https://edusafari.onrender.com/api/register/",
         payload
       );
       // Optional: auto-login

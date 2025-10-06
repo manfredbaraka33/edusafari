@@ -30,7 +30,7 @@ export default function VendorServices() {
         limit,
       }).toString();
 
-      const res = await axios.get(`http://localhost:8000/api/services/?${query}`);
+      const res = await axios.get(`https://edusafari.onrender.com/api/services/?${query}`);
       console.log(res);
       if (reset) setServices(res.data);
       else setServices((prev) => [...prev, ...res.data]);

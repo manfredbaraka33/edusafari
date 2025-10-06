@@ -28,7 +28,7 @@ export default function OnlinePlatforms() {
         limit,
       }).toString();
 
-      const res = await axios.get(`http://localhost:8000/api/platforms/?${query}`);
+      const res = await axios.get(`https://edusafari.onrender.com/api/platforms/?${query}`);
       if (reset) setPlatforms(res.data);
       else setPlatforms((prev) => [...prev, ...res.data]);
 
