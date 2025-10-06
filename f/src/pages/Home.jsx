@@ -40,7 +40,7 @@ const Home = () => {
       }).toString();
 
       // console.log("Fetching with params:", query);
-      const instData = await axios.get(`http://localhost:8000/api/institutions/fetch/?${query}`);
+      const instData = await axios.get(`https://edusafari.onrender.com/api/institutions/fetch/?${query}`);
       // console.log("Backend returned:", instData.data);
       if (reset) setInstitutions(instData.data);
       else setInstitutions(prev => [...prev, ...instData.data]);
