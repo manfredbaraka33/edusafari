@@ -30,7 +30,7 @@ export default function Topbar({ onToggleSidebar }) {
     }
   }, []);
        
-
+console.log(user)
 
   return (
     <div className="h-14 bg-gradient-to-r  from-gray-200 to-yellow-100 shadow flex items-center justify-between px-4 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
