@@ -62,7 +62,7 @@ export default function EduToolDetail() {
         {/* Logo & name */}
         <div className="flex items-center gap-4 mb-4">
           <img
-            src={`http://localhost:8000${tool.logo}`}
+            src={`https://edusafari.onrender.com${tool.logo}`}
             alt={tool.name}
             className="w-20 h-20  rounded-full border border-amber-500"
           />
