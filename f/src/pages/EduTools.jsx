@@ -29,7 +29,7 @@ export default function EduTools() {
         limit,
       }).toString();
 
-      const res = await axios.get(`http://localhost:8000/api/edutools/?${query}`);
+      const res = await axios.get(`https://edusafari.onrender.com/api/edutools/?${query}`);
       if (reset) setTools(res.data);
       else setTools((prev) => [...prev, ...res.data]);
 
