@@ -131,7 +131,7 @@ export default function EduToolDetail() {
                 className="border-b border-gray-200 dark:border-gray-700 pb-2"
               >
                 <p className="text-sm font-semibold dark:text-gray-200 flex gap-1 my-1">
-                     <img src={`http://localhost:8000${c.user.profile.profile_image}`} alt="profile" className="w-7 h-7 rounded-full" />
+                     <img src={`https://edusafari.onrender.com${c.user.profile.profile_image}`} alt="profile" className="w-7 h-7 rounded-full" />
                   {c.user.username}
                   <span className="text-xs text-gray-500 mx-2 my-1">
                     {format(c.created)}
