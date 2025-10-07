@@ -82,11 +82,22 @@ export default function EduToolDetail() {
       <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
         {/* Logo & name */}
         <div className="flex items-center gap-4 mb-4">
-          <img
+          {/* <img
             src={tool.logo ? `https://edusafari.onrender.com${tool.logo}` : "/def_logo.png"}
             alt={tool.name}
             className="w-20 h-20 rounded-full border border-amber-500"
-          />
+          /> */}
+          <img
+              src={
+                tool?.logo
+                  ? `https://edusafari.onrender.com${tool.logo}`
+                  : "/def_logo.png"
+              }
+              alt={tool?.name || "Tool"}
+              className="w-20 h-20 rounded-full border border-amber-500"
+              onError={(e) => (e.currentTarget.src = "/def_logo.png")} 
+            />
+
           <div>
             <h2 className="text-2xl font-bold dark:text-white">{tool.name}</h2>
             <p className="text-gray-600 dark:text-gray-300">{tool.category} | {tool.level}</p>
