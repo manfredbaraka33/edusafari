@@ -238,7 +238,6 @@
 
 
 
-
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
@@ -257,12 +256,13 @@ export default function Signup() {
     confirmPassword: "",
   });
   const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false); // 👈 new state
+  const [loading, setLoading] = useState(false); // 👈 loading state
   const { login } = useAuth();
   const navigate = useNavigate();
 
   const handleNext = () => {
     setError("");
+    // Validation per step
     if (currentStep === 0 && !formData.user_type) {
       setError("Please select a user type.");
       return;
@@ -325,7 +325,124 @@ export default function Signup() {
     <div className="flex items-center justify-center h-screen bg-gradient-to-tr from-orange-400 via-purple-300 to-green-300 p-2">
       <div className="w-full max-w-md relative">
         <AnimatePresence mode="wait">
-          {/* Step 3 (Password Step) */}
+          {/* Step 1 - User Type */}
+          {currentStep === 0 && (
+            <motion.div
+              key="step1"
+              initial={{ x: 300, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: -300, opacity: 0 }}
+              className="bg-white p-6 rounded-lg shadow flex flex-col gap-4"
+            >
+              <h2 className="text-xl font-bold">Select User Type</h2>
+              <div className="text-yellow-400 text-sm bg-black p-2 rounded-sm flex gap-1">
+                <InfoIcon />
+                <h3>This selection cannot be undone after registration!</h3>
+              </div>
+
+              <div className="flex gap-4">
+                <button
+                  onClick={() =>
+                    setFormData({ ...formData, user_type: "regular_user" })
+                  }
+                  disabled={loading}
+                  className={`flex-1 py-2 rounded-lg border ${
+                    formData.user_type === "regular_user"
+                      ? "bg-indigo-600 text-white"
+                      : "bg-white text-gray-700 border-gray-300"
+                  } ${loading ? "opacity-50 cursor-not-allowed" : ""}`}
+                >
+                  Regular User
+                </button>
+                <button
+                  onClick={() =>
+                    setFormData({ ...formData, user_type: "institution_user" })
+                  }
+                  disabled={loading}
+                  className={`flex-1 py-2 rounded-lg border ${
+                    formData.user_type === "institution_user"
+                      ? "bg-indigo-600 text-white"
+                      : "bg-white text-gray-700 border-gray-300"
+                  } ${loading ? "opacity-50 cursor-not-allowed" : ""}`}
+                >
+                  Institution User
+                </button>
+                <button
+                  onClick={() =>
+                    setFormData({ ...formData, user_type: "vendor_user" })
+                  }
+                  disabled={loading}
+                  className={`flex-1 py-2 rounded-lg border ${
+                    formData.user_type === "vendor_user"
+                      ? "bg-indigo-600 text-white"
+                      : "bg-white text-gray-700 border-gray-300"
+                  } ${loading ? "opacity-50 cursor-not-allowed" : ""}`}
+                >
+                  Vendor User
+                </button>
+              </div>
+
+              {error && <p className="text-red-500">{error}</p>}
+              <div className="flex justify-between">
+                <div></div>
+                <button
+                  onClick={handleNext}
+                  disabled={loading}
+                  className={`bg-indigo-600 text-white px-4 py-2 rounded-lg ${
+                    loading ? "opacity-50 cursor-not-allowed" : ""
+                  }`}
+                >
+                  Next
+                </button>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Step 2 - Username */}
+          {currentStep === 1 && (
+            <motion.div
+              key="step2"
+              initial={{ x: 300, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: -300, opacity: 0 }}
+              className="bg-white p-6 rounded-lg shadow flex flex-col gap-4"
+            >
+              <h2 className="text-xl font-bold">Username</h2>
+              <input
+                type="text"
+                placeholder="Enter username"
+                value={formData.username}
+                onChange={(e) =>
+                  setFormData({ ...formData, username: e.target.value })
+                }
+                disabled={loading}
+                className="border border-gray-300 rounded-lg px-3 py-2"
+              />
+              {error && <p className="text-red-500">{error}</p>}
+              <div className="flex justify-between">
+                <button
+                  onClick={handleBack}
+                  disabled={loading}
+                  className={`bg-gray-300 text-gray-700 px-4 py-2 rounded-lg ${
+                    loading ? "opacity-50 cursor-not-allowed" : ""
+                  }`}
+                >
+                  Back
+                </button>
+                <button
+                  onClick={handleNext}
+                  disabled={loading}
+                  className={`bg-indigo-600 text-white px-4 py-2 rounded-lg ${
+                    loading ? "opacity-50 cursor-not-allowed" : ""
+                  }`}
+                >
+                  Next
+                </button>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Step 3 - Password */}
           {currentStep === 2 && (
             <motion.div
               key="step3"
@@ -342,6 +459,7 @@ export default function Signup() {
                 onChange={(e) =>
                   setFormData({ ...formData, password: e.target.value })
                 }
+                disabled={loading}
                 className="border border-gray-300 rounded-lg px-3 py-2"
               />
               <input
@@ -354,29 +472,25 @@ export default function Signup() {
                     confirmPassword: e.target.value,
                   })
                 }
+                disabled={loading}
                 className="border border-gray-300 rounded-lg px-3 py-2"
               />
               {error && <p className="text-red-500">{error}</p>}
-
               <div className="flex justify-between">
                 <button
                   onClick={handleBack}
-                  disabled={loading} // 👈 disable while loading
-                  className={`px-4 py-2 rounded-lg ${
-                    loading
-                      ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-                      : "bg-gray-300 text-gray-700"
+                  disabled={loading}
+                  className={`bg-gray-300 text-gray-700 px-4 py-2 rounded-lg ${
+                    loading ? "opacity-50 cursor-not-allowed" : ""
                   }`}
                 >
                   Back
                 </button>
                 <button
                   onClick={handleNext}
-                  disabled={loading} // 👈 disable while loading
-                  className={`px-4 py-2 rounded-lg text-white ${
-                    loading
-                      ? "bg-indigo-400 cursor-not-allowed"
-                      : "bg-indigo-600 hover:bg-indigo-700"
+                  disabled={loading}
+                  className={`bg-indigo-600 text-white px-4 py-2 rounded-lg ${
+                    loading ? "opacity-50 cursor-not-allowed" : ""
                   }`}
                 >
                   {loading ? "Registering..." : "Register"} {/* 👈 dynamic text */}
@@ -384,8 +498,6 @@ export default function Signup() {
               </div>
             </motion.div>
           )}
-
-          {/* Keep your other steps unchanged */}
         </AnimatePresence>
       </div>
     </div>
