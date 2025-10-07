@@ -141,7 +141,7 @@ export default function VendorServices() {
             onClick={() => handleCardClick(s.id)}
           >
             <img
-              src={`http://localhost:8000${s.logo}` || "/def_logo.png"}
+              src={`https://edusafari.onrender.com${s.logo}` || "/def_logo.png"}
               alt={s.name}
               className="w-20 h-20 mb-4 rounded-full"
             />
