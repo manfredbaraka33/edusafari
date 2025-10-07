@@ -43,6 +43,8 @@ export default function TuitionCentreDetail() {
     }
   };
 
+  console.log(comment)
+
   if (!centre) return <p className="text-center text-gray-500">Loading...</p>;
 
   return (
