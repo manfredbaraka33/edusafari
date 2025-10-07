@@ -60,7 +60,7 @@ export default function PlatformDetail() {
         {/* Logo & name */}
         <div className="flex items-center gap-4 mb-4">
           <img
-            src={`http://localhost:8000${platform.logo}`}
+            src={`https://edusafari.onrender.com${platform.logo}`}
             alt={platform.name}
             className="w-20 h-20 rounded-full border border-amber-500"
           />
@@ -132,7 +132,7 @@ export default function PlatformDetail() {
               >
                 <p className="text-sm font-semibold dark:text-gray-200 flex gap-1 my-1">
                   <img
-                    src={`http://localhost:8000${c.user.profile.profile_image}`}
+                    src={`https://edusafari.onrender.com${c.user.profile.profile_image}`}
                     alt="profile"
                     className="w-7 h-7 rounded-full"
                   />
