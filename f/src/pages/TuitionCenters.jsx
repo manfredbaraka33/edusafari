@@ -29,7 +29,7 @@ export default function TuitionCentres() {
         limit,
       }).toString();
 
-      const res = await axios.get(`http://localhost:8000/api/centres/?${query}`);
+      const res = await axios.get(`https://edusafari.onrender.com/api/centres/?${query}`);
       if (reset) setCentres(res.data);
       else setCentres((prev) => [...prev, ...res.data]);
 
