@@ -45,7 +45,7 @@ export default function VendorServiceDetail() {
       <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
         <div className="flex items-center gap-4 mb-4">
           <img
-            src={`http://localhost:8000${service.logo}` || "/def_logo.png"}
+            src={`https://edusafari.onrender.com${service.logo}` || "/def_logo.png"}
             alt={service.name}
             className="w-20 h-20 rounded-full border border-amber-500"
           />
@@ -81,12 +81,22 @@ export default function VendorServiceDetail() {
         {service.images.length > 0 && (
           <div className="flex gap-2 overflow-x-auto mb-4">
             {service.images.map((img) => (
-              <img
-                key={img.id}
-                src={`http://localhost:8000${img.image}`}
-                alt="service"
-                className="w-32 h-32 object-cover rounded-lg"
-              />
+              // <img
+              //   key={img.id}
+              //   src={`http://localhost:8000${img.image}`}
+              //   alt="service"
+              //   className="w-32 h-32 object-cover rounded-lg"
+              // />
+            <img
+              src={
+                c.user?.profile?.profile_image
+                  ? `https://edusafari.onrender.com${c.user.profile.profile_image}`
+                  : "/im.png"
+              }
+              alt="profile"
+              className="w-7 h-7 rounded-full"
+            />
+
             ))}
           </div>
         )}
