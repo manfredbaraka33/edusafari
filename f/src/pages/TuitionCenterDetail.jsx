@@ -129,7 +129,7 @@ export default function TuitionCentreDetail() {
           >
             {posting ? (
               <div className="flex items-center gap-1 w-full">
-                <Loader2 className="animate-spin w-4 h-4" /> Posting...
+                <Loader2 className="animate-spin w-4 h-4" /> 
               </div>
             ) : (
               "Post"
