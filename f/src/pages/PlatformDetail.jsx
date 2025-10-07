@@ -302,7 +302,7 @@ export default function PlatformDetail() {
           >
             {posting ? (
               <div className="flex items-center gap-1">
-                <Loader2 className="animate-spin w-4 h-4" /> Posting...
+                <Loader2 className="animate-spin w-4 h-4" />
               </div>
             ) : (
               "Post"
