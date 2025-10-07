@@ -135,7 +135,7 @@ export default function OnlinePlatforms() {
             onClick={() => handleCardClick(platform.id)}
           >
             <img
-              src={`http://localhost:8000${platform.logo}`}
+              src={`https://edusafari.onrender.com${platform.logo}`}
               alt={platform.name}
               className="w-20 h-20 mb-4 rounded-full"
             />
