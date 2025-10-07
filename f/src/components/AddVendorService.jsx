@@ -41,7 +41,7 @@ export default function AddVendorService({isOpen,onClose}) {
 
   return (
     <div className="fixed inset-0 bg-white dark:bg-gray-800 bg-opacity-40 flex items-center justify-center z-50">
-    <div className="max-w-md mx-auto p-6">
+    <div className="max-w-md mx-auto p-6 overflow-scroll">
       <div className="flex justify-between"><h2 className="text-2xl font-bold mb-6 dark:text-white">Add Vendor Service</h2>
       <XIcon onClick={onClose} className="text-red-500 cursor-pointer" /></div>
       <form onSubmit={handleSubmit} className="space-y-4 bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
