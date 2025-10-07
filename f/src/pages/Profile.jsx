@@ -34,9 +34,9 @@ export default function Profile() {
     fetchUser();
   }, []);
 
-  if (loading) return <p className="p-6 text-gray-600">Loading profile...</p>;
+  if (loading) return <p className="p-6 text-gray-500">Loading profile...</p>;
   if (!isAuthenticated)
-    return <p className="p-6 text-gray-600">Please login to view your profile.</p>;
+    return <p className="p-6 text-gray-500">Please login to view your profile.</p>;
 
   return (
     <div className="max-w-4xl mx-auto p-6 ">
