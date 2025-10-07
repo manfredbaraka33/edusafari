@@ -147,11 +147,22 @@ export default function EduTools() {
             className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 flex flex-col items-center cursor-pointer"
             onClick={() => handleCardClick(tool.id)}
           >
-            <img
+            {/* <img
               src={`https://edusafari.onrender.com${tool.logo}`}
               alt={tool.name}
               className="w-20 h-20 mb-4 rounded-full"
+            /> */}
+            <img
+              src={
+                tool?.logo
+                  ? `https://edusafari.onrender.com${tool.logo}`
+                  : "/def_logo.png"
+              }
+              alt={tool?.name || "Tool"}
+              className="w-20 h-20 rounded-full border border-amber-500"
+              onError={(e) => (e.currentTarget.src = "/def_logo.png")} 
             />
+
             <h3 className="text-lg font-semibold dark:text-gray-100">
               {tool.name}
             </h3>
