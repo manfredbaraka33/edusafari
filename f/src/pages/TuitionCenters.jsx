@@ -137,7 +137,7 @@ export default function TuitionCentres() {
             onClick={() => handleCardClick(centre.id)}
           >
             <img
-              src={`http://localhost:8000${centre.logo}`}
+              src={`https://edusafari.onrender.com${centre.logo}`}
               alt={centre.name}
               className="w-20 h-20 mb-4 rounded-full"
             />
